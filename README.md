@@ -178,7 +178,7 @@ obligations that apply to your data and jurisdiction.
 
 ## Citation
 
-A manuscript describing ReCo is in preparation. Until a formal ReCo citation is available, please cite this repository and the associated [mAIstro](https://github.com/eltzanis/mAIstro) and [ReclAIm](https://github.com/eltzanis/ReclAIm) frameworks where appropriate.
+A manuscript describing ReCo is in preparation. Until a formal ReCo citation is available, please cite this repository and the associated [mAIstro](https://doi.org/10.1016/j.ejrai.2025.100044) and [ReclAIm](https://doi.org/10.1148/ryai.250923) frameworks where appropriate.
 
 ## License
 
