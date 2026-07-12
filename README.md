@@ -139,10 +139,10 @@ We intend to release ReCo as an open-source research platform. Before public rel
 
 We welcome expressions of interest from academic research teams in the biomedical domain, including medicine, radiology, medical physics, biology, biomedical engineering, and related fields. Participating teams will help evaluate ReCo's ability to configure, ingest, document, and operationalize research frameworks relevant to their own scientific workflows.
 
-If you would like to take part in the ReCo evaluation, please express your interest using the following form:
+If you would like to participate in the ReCo evaluation, please express your interest by contacting:
 
-**Evaluation interest form:** [add form link here]
-
+Dr. Eleftherios Tzanis
+Email: tzaniseleftherios@gmail.com
 
 
 
