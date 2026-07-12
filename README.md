@@ -183,7 +183,7 @@ A manuscript describing ReCo is in preparation. Until a formal ReCo citation is 
 
 ## License
 
-Add repository license information here before public release.
+To be added.
 
 ## Contact
 
