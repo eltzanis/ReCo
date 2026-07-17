@@ -181,7 +181,7 @@ obligations that apply to your data and jurisdiction.
 
 If you use ReCo in your research, please cite:
 
-> Tzanis E, Klontzas ME. **ReCo: a self-configuring and self-extending agentic framework for biomedical research.** *medRxiv*. 2026;2026.07.14.26358025. doi:[https://doi.org/10.64898/2026.07.14.26358025](https://doi.org/10.64898/2026.07.14.26358025)
+> Tzanis E, Klontzas ME. **ReCo: a self-configuring and self-extending agentic framework for biomedical research.** *medRxiv*. 2026;2026.07.14.26358025. doi: [https://doi.org/10.64898/2026.07.14.26358025](https://doi.org/10.64898/2026.07.14.26358025)
 
 ReCo includes the capabilities of previously published open-source frameworks. If your work makes use of these capabilities through ReCo, please also consider citing:
 
