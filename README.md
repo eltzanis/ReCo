@@ -179,7 +179,14 @@ obligations that apply to your data and jurisdiction.
 
 ## Citation
 
-A manuscript describing ReCo is in preparation. Until a formal ReCo citation is available, please cite this repository and the associated [mAIstro](https://doi.org/10.1016/j.ejrai.2025.100044) and [ReclAIm](https://doi.org/10.1148/ryai.250923) frameworks where appropriate.
+If you use ReCo in your research, please cite:
+
+> Tzanis E, Klontzas ME. **ReCo: a self-configuring and self-extending agentic framework for biomedical research.** *medRxiv*. 2026;2026.07.14.26358025. doi:[https://doi.org/10.64898/2026.07.14.26358025](https://doi.org/10.64898/2026.07.14.26358025)
+
+ReCo includes the capabilities of previously published open-source frameworks. If your work makes use of these capabilities through ReCo, please also consider citing:
+
+- **ReclAIm:** https://doi.org/10.1148/ryai.250923
+- **mAIstro:** https://doi.org/10.1016/j.ejrai.2025.100044
 
 ## License
 
