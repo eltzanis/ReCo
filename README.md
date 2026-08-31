@@ -44,6 +44,7 @@ ReCo was developed to reduce this barrier. It provides:
 
 ReCo is intended for researchers, medical physicists, biomedical engineers, clinicians, and students who need to use advanced computational tools without repeatedly rebuilding the same infrastructure around each new framework.
 
+
 ## Core Capabilities
 
 ### Bundled Research Toolkit
