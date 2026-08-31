@@ -10,6 +10,14 @@ ReCo, short for **Research Cosmos**, is a desktop agentic research platform desi
 
 ReCo ships with a curated toolkit for common research tasks, but its central purpose is broader: when a user provides a GitHub repository, local codebase, or framework documentation, ReCo can study the source, infer its dependencies and capabilities, generate a dedicated MCP server, verify the new interface, document it, and add it to the ReCo ecosystem under user supervision.
 
+## User Guide
+
+A detailed step-by-step user guide is available here:
+
+**[ReCo User Guide](docs/user-guide.md)**
+
+The guide covers model configuration, skills, first-launch setup, enabling MCP servers, project memory, previous chats, the medical image viewer, and the self-extension workflow for adding new frameworks.
+
 ## Why ReCo?
 
 Modern biomedical research moves quickly. New AI models, analysis pipelines, segmentation tools, omics workflows, and imaging frameworks are released constantly, but using them often requires manual installation, dependency conflict resolution, custom wrapper code, and detailed knowledge of each framework's interface.
@@ -97,14 +105,6 @@ The ReCo desktop application includes the following panels:
 - **Settings**: configure the reasoning backend, model selection, native tools, and permission policy.
 - **About / Documentation**: access application information and bundled documentation.
 
-
-## User Guide
-
-A detailed step-by-step user guide is available here:
-
-**[ReCo User Guide](docs/user-guide.md)**
-
-The guide covers model configuration, skills, first-launch setup, enabling MCP servers, project memory, previous chats, the medical image viewer, and the self-extension workflow for adding new frameworks.
 
 
 ## Example Self-Extension Workflow
