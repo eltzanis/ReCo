@@ -1,8 +1,29 @@
 # ReCo — Research Cosmos
 
-### User Guide · v0.0.1
+### User Guide · v0.0.2
 
 ---
+
+## What is ReCo?
+
+**ReCo (Research Cosmos)** is a **self-configuring and self-evolving agentic system for
+biomedical research** — spanning radiology and medical physics, biology, biomedical
+engineering, and beyond. You describe what you want in plain language, and an autonomous
+agent carries it out — reading and writing files, running code, and calling specialized
+research tools on your behalf. ReCo is not locked to any one domain or toolset:
+it grows to fit whatever you work on.
+
+ReCo ships with a curated set of **pre-configured tools** (MCP servers) covering common
+research tasks: segmentation, radiomics, tabular and image classification, AutoML,
+exploratory data analysis, and more. These ready-made tools let you get productive
+immediately.
+
+But the predefined tools are only the starting point. **ReCo's defining purpose is that
+it is open-ended and extensible:** on your request, the agent can wrap *any* framework
+you point it to — a GitHub repository, a local project, or a Python package — and turn it
+into a new tool inside ReCo. In other words, the bundled servers are examples of what ReCo
+can do, not the limit of it. Over time you can grow ReCo into a personal research cosmos
+tailored to your own workflows.
 
 This guide walks through the first-run setup and the main panels of the app, step by step.
 
@@ -13,41 +34,64 @@ This guide walks through the first-run setup and the main panels of the app, ste
 Everything in ReCo is driven by a language model (LLM). Before anything else, open the
 **Settings** panel and tell ReCo which model to use.
 
-![Settings panel — provider, model, API key, built-in tools, and tool permissions](images/01-settings.png)
+![Settings panel — provider, account, model, thinking level, approvals, and sandbox](images/01-settings.png)
 
 **Provider and model.** Pick a **Provider** from the dropdown, then a **Model**. ReCo
 supports:
 
-- **Anthropic (Claude)** — Anthropic's hosted Claude models. Create an API key at
-  https://console.anthropic.com/settings/keys
-- **DeepSeek** — DeepSeek's hosted models. Create an API key at
-  https://platform.deepseek.com/api_keys
-- **Ollama Cloud** — hosted open models. Create an API key at
-  https://ollama.com/settings/keys
+- **OpenAI** — the recommended option and the core reasoning engine for the full ReCo
+  experience. Sign in with an eligible **ChatGPT subscription**, or use an **OpenAI
+  Platform API key**, to access OpenAI's state-of-the-art GPT models through Codex. The
+  model list is discovered from the signed-in account and installed Codex runtime, so it
+  always reflects what is actually available to you. In v0.0.2, the current GPT-5.6
+  family includes **GPT-5.6 Sol** (the default and most capable choice), **GPT-5.6 Terra**
+  (a balanced choice), and **GPT-5.6 Luna** (the efficient choice), subject to account
+  availability. See https://developers.openai.com/api/docs/models
 - **Ollama (Local)** — open models running entirely on your own machine, for fully
   offline use and maximum data privacy. No API key needed; install Ollama from
   https://ollama.com/download
+- **Ollama Cloud** — hosted Ollama models. Create an API key at
+  https://ollama.com/settings/keys
+- **OpenAI-compatible** — any other provider that accepts an API key and implements the
+  OpenAI **Responses API**. Enter its provider name, base URL, exact model ID, and API
+  key.
 
-**Authentication.** Most providers authenticate with an **API key** — create one at the
-provider's link above, then paste it into the **API key** field. The key is encrypted and
-stored locally on your machine.
+**OpenAI authentication.** You have two options:
+
+1. **ChatGPT subscription login** — click **Sign in with ChatGPT** and complete the browser
+   login. ReCo then uses the access available through your eligible ChatGPT plan, with no
+   separate API key required, or
+2. **OpenAI Platform API key** — paste a key from https://platform.openai.com/api-keys and
+   click **Use API key**. API usage is billed separately from a ChatGPT subscription.
+
+For details on these two Codex authentication paths, see
+https://learn.chatgpt.com/docs/auth. Credentials for Ollama Cloud and other compatible
+providers are kept in protected local storage when the operating-system keychain is
+available.
+
+**Thinking level.** Select how much reasoning effort the model should use. For OpenAI,
+ReCo shows only the thinking levels supported by the selected model. Other providers
+receive the chosen level only when their Responses API implementation supports it.
+
+> **Model compatibility:** ReCo's complete agentic workflow — including Codex tool
+> semantics, MCP tool discovery and invocation, approvals, and skill-driven extension —
+> is developed and tested around the **Codex app-server protocol with OpenAI models**.
+> Ollama and other OpenAI-compatible models can still be useful for chatting and coding-agent
+> tasks, but support for Codex's namespaced MCP tools and tool-selection behavior varies by
+> provider and model. For the most reliable use of the bundled MCP servers and ReCo's
+> self-configuring and self-evolving capabilities, use an OpenAI model through Codex.
 
 > **Tip — data privacy:** If you work with patient-sensitive data, be aware that with a
 > hosted provider, any file content the agent reads (DICOM metadata, CSV/Excel records) is
 > sent through the API to that provider. It is strongly advised to work with **anonymized
 > data**, or to use **local LLMs (Ollama Local)** if your equipment allows it.
 
-**Enable the built-in tools.** Scroll to **Built-in tools**. These are ReCo's native
-capabilities — reading and writing files, running shell commands, searching, and web
-access. They are **disabled by default**; enable the ones the agent needs so it can
-actually act on your machine. For a typical research workflow, enabling all of them
-(Bash, Read, Write, Edit, Glob, Grep, WebFetch, WebSearch) gives the agent its full
-range of abilities.
-
-**Set tool permissions.** Under **Tool permissions**, choose what happens when the agent
-wants to use a tool. We recommend **"Ask before each tool call"** — a prompt appears for
-every action, and you can **Allow once**, **Allow for chat**, or **Deny**. This keeps you
-in control, which is especially important for tools that write files or run commands.
+**Set approvals and access.** Under **Approvals**, we recommend **Ask when needed** so
+ReCo asks before shell commands and file changes that require your authorization. Under
+**Sandbox**, choose **Read only**, **Workspace write** (the recommended balance), or
+**Full filesystem access**. You can separately allow network access for shell commands
+and enable or disable web search. These controls determine what ReCo may do on your
+machine while it works.
 
 ---
 
@@ -297,10 +341,39 @@ obligations that apply to your data and jurisdiction.
 
 ## How to cite ReCo
 
-ReCo's pre-configured tools are rooted in the following two papers. If ReCo contributes
-to your research, please cite:
+If ReCo contributes to your research, please cite the ReCo preprint and the bundled
+tools original papers:
 
+- https://doi.org/10.64898/2026.07.14.26358025
 - https://doi.org/10.1148/ryai.250923
 - https://doi.org/10.1016/j.ejrai.2025.100044
 
+### Bundled frameworks & references
 
+ReCo's pre-installed MCP servers wrap the open-source frameworks below. When you use these
+tools, please also cite the relevant upstream work:
+
+- **nnU-Net** (nnU-Net Segmentation Toolkit; also underlies TotalSegmentator) — Isensee F,
+  Jaeger PF, Kohl SAA, Petersen J, Maier-Hein KH. *nnU-Net: a self-configuring method for
+  deep learning-based biomedical image segmentation.* Nature Methods. 2021;18(2):203–211.
+  https://doi.org/10.1038/s41592-020-01008-z
+- **TotalSegmentator** — Wasserthal J, Breit H-C, Meyer MT, et al. *TotalSegmentator:
+  Robust Segmentation of 104 Anatomic Structures in CT Images.* Radiology: Artificial
+  Intelligence. 2023;5(5):e230024. https://doi.org/10.1148/ryai.230024
+- **PyRadiomics** — van Griethuysen JJM, Fedorov A, Parmar C, et al. *Computational
+  Radiomics System to Decode the Radiographic Phenotype.* Cancer Research.
+  2017;77(21):e104–e107. https://doi.org/10.1158/0008-5472.CAN-17-0339
+- **MONAI** (Medical Image Classification 3D) — Cardoso MJ, Li W, Brown R, et al. *MONAI:
+  An open-source framework for deep learning in healthcare.* arXiv:2211.02701. 2022.
+  https://doi.org/10.48550/arXiv.2211.02701
+- **PyTorch** (Medical Image Classification 2D & 3D) — Paszke A, Gross S, Massa F, et al.
+  *PyTorch: An Imperative Style, High-Performance Deep Learning Library.* NeurIPS.
+  2019:8024–8035. https://doi.org/10.48550/arXiv.1912.01703
+- **scikit-learn** (Feature Importance & Selection, performance metrics) — Pedregosa F,
+  Varoquaux G, Gramfort A, et al. *Scikit-learn: Machine Learning in Python.* JMLR.
+  2011;12:2825–2830. https://jmlr.org/papers/v12/pedregosa11a.html
+- **PyCaret** (PyCaret Classification & Regression) — Ali M. *PyCaret: An open-source,
+  low-code machine learning library in Python.* 2020. https://pycaret.org
+- **SciPy / seaborn** (EDA Analysis) — Virtanen P, Gommers R, Oliphant TE, et al. *SciPy
+  1.0: fundamental algorithms for scientific computing in Python.* Nature Methods.
+  2020;17:261–272. https://doi.org/10.1038/s41592-019-0686-2
