@@ -10,6 +10,14 @@ ReCo, short for **Research Cosmos**, is a desktop agentic research platform desi
 
 ReCo ships with a curated toolkit for common research tasks, but its central purpose is broader: when a user provides a GitHub repository, local codebase, or framework documentation, ReCo can study the source, infer its dependencies and capabilities, generate a dedicated MCP server, verify the new interface, document it, and add it to the ReCo ecosystem under user supervision.
 
+## Download ReCo
+
+Download the latest ReCo desktop application for your operating system:
+
+- Windows: [Download ReCo for Windows (.exe)](https://drive.google.com/file/d/1n9U2_ZwmwA15ZdEZGjqaBuAlA3-fOyE_/view?usp=sharing)
+
+- Linux (Debian/Ubuntu): [Download ReCo for Linux (.deb)](https://drive.google.com/file/d/1OtlSFlCFSXM0n6REZRTakVv9Ysw0hDxJ/view?usp=sharing)
+
 ## User Guide
 
 A detailed step-by-step user guide is available here:
