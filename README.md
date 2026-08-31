@@ -20,6 +20,13 @@ Download the latest ReCo desktop application for your operating system:
 
 - Linux (Debian/Ubuntu): [Download ReCo for Linux (.deb)](https://drive.google.com/file/d/1h338NsMVdYKwLgZd13cuz1XHbOhj2G4O/view?usp=drive_link)
 
+
+
+
+<p align="center">
+  <img src="assets/reco_main_screen.png" alt="ReCo - Research Cosmos UI" width="920">
+</p>
+
 ## User Guide
 
 A detailed step-by-step user guide is available here:
