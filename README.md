@@ -12,14 +12,6 @@ ReCo ships with a curated toolkit for common research tasks, but its central pur
 
 ⭐ If you find ReCo useful, please consider starring the repository to support the project and help others discover it!
 
-## Download ReCo
-
-Download the latest ReCo desktop application for your operating system:
-
-- Windows: [Download ReCo for Windows (.exe)](https://drive.google.com/file/d/1n9U2_ZwmwA15ZdEZGjqaBuAlA3-fOyE_/view?usp=sharing)
-
-- Linux (Debian/Ubuntu): [Download ReCo for Linux (.deb)](https://drive.google.com/file/d/1OtlSFlCFSXM0n6REZRTakVv9Ysw0hDxJ/view?usp=sharing)
-
 ## User Guide
 
 A detailed step-by-step user guide is available here:
